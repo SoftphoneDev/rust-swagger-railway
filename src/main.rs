@@ -45,12 +45,19 @@ async fn main() {
         .merge(SwaggerUi::new("/docs")
             .url("/api-docs/openapi.json", ApiDoc::openapi()));
 
-    println!("🚀 Server running at http://127.0.0.1:3000");
-    println!("📖 API endpoints:");
-    println!("   - Health: http://127.0.0.1:3000/health");
-    println!("   - API docs: http://127.0.0.1:3000/docs");
+    let port = std::env::var("PORT")
+        .unwrap_or_else(|_| "3000".to_string())
+        .parse::<u16>()
+        .expect("PORT must be a valid number");
 
-    axum::serve(TcpListener::bind("127.0.0.1:3000").await.unwrap(), app)
+    let addr = format!("0.0.0.0:{}", port);
+
+    println!("🚀 Server running at http://{}", addr);
+    println!("📖 API endpoints:");
+    println!("   - Health: http://{}/health", addr);
+    println!("   - API docs: http://{}/docs", addr);
+
+    axum::serve(TcpListener::bind(&addr).await.unwrap(), app)
         .await
         .unwrap();
 }
