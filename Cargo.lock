@@ -1518,6 +1518,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-swagger-railway"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "qdrant-client",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tokio",
+ "tower 0.4.13",
+ "utoipa",
+ "utoipa-swagger-ui",
+]
+
+[[package]]
 name = "rustc-hash"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1670,22 +1686,6 @@ name = "semver"
 version = "1.0.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d767eb0aabc880b29956c35734170f26ed551a859dbd361d140cdbeca61ab1e2"
-
-[[package]]
-name = "seo-engine"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "qdrant-client",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "tower 0.4.13",
- "utoipa",
- "utoipa-swagger-ui",
-]
 
 [[package]]
 name = "serde"

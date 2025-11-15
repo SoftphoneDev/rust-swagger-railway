@@ -1,5 +1,5 @@
 [package]
-name = "seo-engine"
+name = "rust-swagger-railway"
 version = "0.1.0"
 edition = "2024"
 
